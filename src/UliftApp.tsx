@@ -1,9 +1,7 @@
-import { Typography } from '@mui/material'
+import { AppRouter } from './router/AppRouter'
 
 export default function UliftApp (): JSX.Element {
   return (
-    <>
-      <Typography variant='h1' component='h1'>Ulift APP</Typography>
-    </>
+    <AppRouter />
   )
 }
