@@ -13,7 +13,6 @@ export function AuthFormLayout ({ children }: PropsWithChildren): JSX.Element {
         alignItems='center'
         sx={{
           minHeight: '100vh',
-          maxHeight: '100vh',
           padding: 4,
           backgroundImage: `url(${'/background.jpg'})`,
           // cover the image with a dark layer with a 50% opacity

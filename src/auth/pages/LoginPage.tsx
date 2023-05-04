@@ -1,11 +1,17 @@
 import { AuthFormLayout } from '../layout/AuthFormLayout'
-import { Grid, TextField, Button, Link } from '@mui/material'
+import { Grid, TextField, Button, Link, Typography } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 
 export function LoginPage (): JSX.Element {
   return (
     <AuthFormLayout>
       <Grid container sx={{ mt: 3 }}>
+        <Grid container direction='row' justifyContent='center'>
+            <Typography variant='h4' sx={{
+              mb: 2,
+              fontWeight: 500
+            }}>Inicia Sesión</Typography>
+        </Grid>
           <Grid item
               xs={12}
               sx={{
@@ -14,10 +20,10 @@ export function LoginPage (): JSX.Element {
               }}
                 >
             <TextField
-              label="Correo"
-              type="email"
+              label='Correo'
+              type='email'
               fullWidth
-              name="email"
+              name='email'
               placeholder='correo@ucab.edu.ve'
               InputProps={{
                 sx: {
@@ -55,10 +61,11 @@ export function LoginPage (): JSX.Element {
               borderRadius: 1
             }}>
             <TextField
-              label="Contraseña"
-              type="password"
+              label='Contraseña'
+              type='password'
               fullWidth
-              name="password"
+              name='password'
+              placeholder='********'
               InputProps={{
                 sx: {
                   '& input': {
@@ -95,7 +102,7 @@ export function LoginPage (): JSX.Element {
             sx={{ mb: 2 }}>
 
             <Grid item xs={12} sm={6} >
-              <Button variant="outlined" fullWidth type="submit" sx={
+              <Button variant='outlined' fullWidth type='submit' sx={
                 {
                   color: (theme) => theme.palette.primary.contrastText,
                   borderColor: (theme) =>
@@ -112,8 +119,8 @@ export function LoginPage (): JSX.Element {
             </Grid>
           </Grid>
 
-          <Grid container direction="row" justifyContent="end">
-            <Link component={RouterLink} color="inherit" to="/auth/registro">
+          <Grid container direction='row' justifyContent='end'>
+            <Link component={RouterLink} color='inherit' to='/auth/registro'>
               Crear una cuenta
             </Link>
           </Grid>
