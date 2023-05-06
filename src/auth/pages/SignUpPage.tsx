@@ -198,7 +198,7 @@ export function SignUpPage (): JSX.Element {
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="female"
-              name="radio-buttons-group"
+              name="gender"
               row={true}
             >
               <FormControlLabel
@@ -213,6 +213,75 @@ export function SignUpPage (): JSX.Element {
               />
             </RadioGroup>
           </Grid>
+          <Grid item xs={12}
+            sx={{
+              mb: 2,
+              borderRadius: 1
+            }}
+          >
+             <FormLabel id="demo-radio-buttons-group-label" sx={{
+               color: (theme) => theme.palette.primary.contrastText
+             }}>Rol</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="student"
+              name="role"
+              row={true}
+            >
+              <FormControlLabel
+                value="student"
+                control={<Radio color='secondary' />}
+                label="Estudiante"
+              />
+              <FormControlLabel
+                value="teacher"
+                control={<Radio color='secondary' />}
+                label="Profesor"
+              />
+            </RadioGroup>
+          </Grid>
+
+          <Grid
+            item xs={12}
+            sx={{
+              mb: 2,
+              borderRadius: 1
+            }}>
+          <TextField
+              label='Contacto de emergencia'
+              type='text'
+              fullWidth
+              name='emergencyContact'
+              InputProps={{
+                sx: {
+                  '& input': {
+                    color: (theme) => theme.palette.primary.contrastText
+                  }
+                }
+              }}
+              sx={{
+                '& .MuiInputBase-root': {
+                  color: (theme) => theme.palette.primary.contrastText
+                },
+                '& .MuiInputLabel-root': {
+                  color: (theme) => theme.palette.primary.contrastText
+                },
+                '& .MuiFormLabel-root': {
+                  color: (theme) => theme.palette.primary.contrastText
+                },
+                '& .MuiFormLabel-root.Mui-focused': {
+                  color: (theme) => theme.palette.primary.contrastText
+                }
+              }}
+              InputLabelProps={{
+                sx: {
+                  color: (theme) => theme.palette.primary.contrastText
+                }
+              }}
+              variant='filled'
+            />
+          </Grid>
+
           <Grid container
             direction='row'
             justifyContent='center'
