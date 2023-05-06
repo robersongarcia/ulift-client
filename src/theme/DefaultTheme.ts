@@ -7,7 +7,7 @@ export const themeOptions: ThemeOptions = {
       main: '#042F3E'
     },
     secondary: {
-      main: '#40B4E5',
+      main: '#fff',
       contrastText: '#fff'
     },
     background: {
@@ -18,6 +18,9 @@ export const themeOptions: ThemeOptions = {
     },
     warning: {
       main: '#ffc526'
+    },
+    info: {
+      main: '#40B4E5'
     }
   }
 }

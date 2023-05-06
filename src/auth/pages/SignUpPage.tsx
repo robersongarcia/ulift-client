@@ -1,5 +1,15 @@
 import { AuthFormLayout } from '../layout/AuthFormLayout'
-import { Grid, TextField, Button, Link, Typography } from '@mui/material'
+import {
+  Grid,
+  TextField,
+  Button,
+  Link,
+  Typography,
+  RadioGroup,
+  FormLabel,
+  FormControlLabel,
+  Radio
+} from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 
 export function SignUpPage (): JSX.Element {
@@ -176,7 +186,33 @@ export function SignUpPage (): JSX.Element {
               variant='filled'
             />
           </Grid>
-
+          <Grid item xs={12}
+            sx={{
+              mb: 2,
+              borderRadius: 1
+            }}
+          >
+             <FormLabel id="demo-radio-buttons-group-label" sx={{
+               color: (theme) => theme.palette.primary.contrastText
+             }}>Género</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="female"
+              name="radio-buttons-group"
+              row={true}
+            >
+              <FormControlLabel
+                value="female"
+                control={<Radio color='secondary' />}
+                label="Femenino"
+              />
+              <FormControlLabel
+                value="male"
+                control={<Radio color='secondary' />}
+                label="Masculino"
+              />
+            </RadioGroup>
+          </Grid>
           <Grid container
             direction='row'
             justifyContent='center'
