@@ -1,7 +1,7 @@
+import { AddAPhoto } from '@mui/icons-material'
 import { AuthFormLayout } from '../layout/AuthFormLayout'
 import {
   Grid,
-  TextField,
   Button,
   Link,
   Typography,
@@ -10,6 +10,7 @@ import {
   FormControlLabel,
   Radio
 } from '@mui/material'
+import { TextFieldAuth } from '../components/TextFieldAuth'
 import { Link as RouterLink } from 'react-router-dom'
 
 export function SignUpPage (): JSX.Element {
@@ -29,38 +30,9 @@ export function SignUpPage (): JSX.Element {
                 borderRadius: 1
               }}
                 >
-            <TextField
+            <TextFieldAuth
               label='Nombre'
-              type='text'
-              fullWidth
               name='name'
-              InputProps={{
-                sx: {
-                  '& input': {
-                    color: (theme) => theme.palette.primary.contrastText
-                  }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiInputLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root.Mui-focused': {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              variant='filled'
             />
           </Grid>
           <Grid item
@@ -70,38 +42,9 @@ export function SignUpPage (): JSX.Element {
                 borderRadius: 1
               }}
                 >
-            <TextField
+            <TextFieldAuth
               label='Apellido'
-              type='text'
-              fullWidth
               name='lastName'
-              InputProps={{
-                sx: {
-                  '& input': {
-                    color: (theme) => theme.palette.primary.contrastText
-                  }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiInputLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root.Mui-focused': {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              variant='filled'
             />
           </Grid>
           <Grid item
@@ -111,38 +54,10 @@ export function SignUpPage (): JSX.Element {
                 borderRadius: 1
               }}
                 >
-            <TextField
+            <TextFieldAuth
               label='Correo'
               type='email'
-              fullWidth
               name='email'
-              InputProps={{
-                sx: {
-                  '& input': {
-                    color: (theme) => theme.palette.primary.contrastText
-                  }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiInputLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root.Mui-focused': {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              variant='filled'
             />
           </Grid>
           <Grid
@@ -151,39 +66,11 @@ export function SignUpPage (): JSX.Element {
               mb: 2,
               borderRadius: 1
             }}>
-            <TextField
+            <TextFieldAuth
               label='Contraseña'
               type='password'
-              fullWidth
               name='password'
               placeholder='********'
-              InputProps={{
-                sx: {
-                  '& input': {
-                    color: (theme) => theme.palette.primary.contrastText
-                  }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiInputLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root.Mui-focused': {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              variant='filled'
             />
           </Grid>
           <Grid item xs={12}
@@ -192,24 +79,24 @@ export function SignUpPage (): JSX.Element {
               borderRadius: 1
             }}
           >
-             <FormLabel id="demo-radio-buttons-group-label" sx={{
+             <FormLabel id='demo-radio-buttons-group-label' sx={{
                color: (theme) => theme.palette.primary.contrastText
              }}>Género</FormLabel>
             <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="gender"
+              aria-labelledby='demo-radio-buttons-group-label'
+              defaultValue='female'
+              name='gender'
               row={true}
             >
               <FormControlLabel
-                value="female"
+                value='female'
                 control={<Radio color='secondary' />}
-                label="Femenino"
+                label='Femenino'
               />
               <FormControlLabel
-                value="male"
+                value='male'
                 control={<Radio color='secondary' />}
-                label="Masculino"
+                label='Masculino'
               />
             </RadioGroup>
           </Grid>
@@ -219,24 +106,24 @@ export function SignUpPage (): JSX.Element {
               borderRadius: 1
             }}
           >
-             <FormLabel id="demo-radio-buttons-group-label" sx={{
+             <FormLabel id='demo-radio-buttons-group-label' sx={{
                color: (theme) => theme.palette.primary.contrastText
              }}>Rol</FormLabel>
             <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="student"
-              name="role"
+              aria-labelledby='demo-radio-buttons-group-label'
+              defaultValue='student'
+              name='role'
               row={true}
             >
               <FormControlLabel
-                value="student"
+                value='student'
                 control={<Radio color='secondary' />}
-                label="Estudiante"
+                label='Estudiante'
               />
               <FormControlLabel
-                value="teacher"
+                value='teacher'
                 control={<Radio color='secondary' />}
-                label="Profesor"
+                label='Profesor'
               />
             </RadioGroup>
           </Grid>
@@ -247,39 +134,32 @@ export function SignUpPage (): JSX.Element {
               mb: 2,
               borderRadius: 1
             }}>
-          <TextField
+          <TextFieldAuth
               label='Contacto de emergencia'
-              type='text'
-              fullWidth
               name='emergencyContact'
-              InputProps={{
-                sx: {
-                  '& input': {
-                    color: (theme) => theme.palette.primary.contrastText
-                  }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiInputLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root.Mui-focused': {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              variant='filled'
             />
+          </Grid>
+
+          <Grid item xs={12}
+            sx={{
+              mb: 2,
+              borderRadius: 3
+            }}>
+            <input
+              accept='image/*'
+              style={{ display: 'none' }}
+              id='raised-button-file'
+              multiple
+              type='file'
+              name='image'
+            />
+            <label htmlFor='raised-button-file'>
+              <Button variant='contained' color='secondary' component='span'>
+                <AddAPhoto sx={{ mr: 1 }}/>
+                Subir foto de perfil
+              </Button>
+            </label>
+
           </Grid>
 
           <Grid container
@@ -287,19 +167,11 @@ export function SignUpPage (): JSX.Element {
             justifyContent='center'
             sx={{ mb: 2 }}>
 
-            <Grid item xs={12} sm={6} >
-              <Button variant='outlined' fullWidth type='submit' sx={
-                {
-                  color: (theme) => theme.palette.primary.contrastText,
-                  borderColor: (theme) =>
-                    theme.palette.primary.contrastText,
-                  '&:hover': {
-                    backgroundColor: (theme) =>
-                      theme.palette.primary.contrastText,
-                    color: (theme) => theme.palette.primary.main
-                  }
-                }
-              }>
+            <Grid item xs={12} sm={6} sx={{ mt: 2 }}>
+              <Button
+                variant='outlined'
+                fullWidth type='submit'
+                color='secondary'>
                 Crear una cuenta
               </Button>
             </Grid>
@@ -307,7 +179,7 @@ export function SignUpPage (): JSX.Element {
 
           <Grid container direction='row' justifyContent='end'>
           <Typography sx={{ mr: 1 }}>¿Ya tienes cuenta?</Typography>
-            <Link component={RouterLink} color="inherit" to="/auth/login">
+            <Link component={RouterLink} color='inherit' to='/auth/login'>
               Inicia Sesión
             </Link>
           </Grid>

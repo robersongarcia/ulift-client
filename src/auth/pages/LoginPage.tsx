@@ -1,6 +1,7 @@
 import { AuthFormLayout } from '../layout/AuthFormLayout'
-import { Grid, TextField, Button, Link, Typography } from '@mui/material'
+import { Grid, Button, Link, Typography } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
+import { TextFieldAuth } from '../components/TextFieldAuth'
 
 export function LoginPage (): JSX.Element {
   return (
@@ -19,39 +20,11 @@ export function LoginPage (): JSX.Element {
                 borderRadius: 1
               }}
                 >
-            <TextField
+            <TextFieldAuth
               label='Correo'
               type='email'
-              fullWidth
               name='email'
               placeholder='correo@ucab.edu.ve'
-              InputProps={{
-                sx: {
-                  '& input': {
-                    color: (theme) => theme.palette.primary.contrastText
-                  }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiInputLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root.Mui-focused': {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              variant='filled'
             />
           </Grid>
           <Grid
@@ -60,39 +33,11 @@ export function LoginPage (): JSX.Element {
               mb: 2,
               borderRadius: 1
             }}>
-            <TextField
+            <TextFieldAuth
               label='Contraseña'
               type='password'
-              fullWidth
               name='password'
               placeholder='********'
-              InputProps={{
-                sx: {
-                  '& input': {
-                    color: (theme) => theme.palette.primary.contrastText
-                  }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiInputLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root': {
-                  color: (theme) => theme.palette.primary.contrastText
-                },
-                '& .MuiFormLabel-root.Mui-focused': {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: (theme) => theme.palette.primary.contrastText
-                }
-              }}
-              variant='filled'
             />
           </Grid>
 
@@ -102,18 +47,12 @@ export function LoginPage (): JSX.Element {
             sx={{ mb: 2 }}>
 
             <Grid item xs={12} sm={6} >
-              <Button variant='outlined' fullWidth type='submit' sx={
-                {
-                  color: (theme) => theme.palette.primary.contrastText,
-                  borderColor: (theme) =>
-                    theme.palette.primary.contrastText,
-                  '&:hover': {
-                    backgroundColor: (theme) =>
-                      theme.palette.primary.contrastText,
-                    color: (theme) => theme.palette.primary.main
-                  }
-                }
-              }>
+              <Button
+                variant='outlined'
+                fullWidth
+                type='submit'
+                color='secondary'
+              >
                 Login
               </Button>
             </Grid>
