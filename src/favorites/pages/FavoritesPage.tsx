@@ -1,8 +1,9 @@
+import { PageWithNavBar } from '../../ui/layout/PageWithNavBar'
 
 export function FavoritesPage (): JSX.Element {
   return (
-    <>
-        <h1>Favorites Page</h1>
-    </>
+    <PageWithNavBar>
+      <h1>Favorites Page</h1>
+    </PageWithNavBar>
   )
 }
