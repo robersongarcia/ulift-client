@@ -14,16 +14,15 @@ export function NavBar (): JSX.Element {
 
   return (
     <AppBar
-      position='relative'
       sx={{
-        height: '10vh',
+        height: '9vh',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        width: '100vw',
+        width: '100%',
         // bottom navbar
-        top: 'auto',
+        position: 'relative',
         bottom: 0
       }}
     >
