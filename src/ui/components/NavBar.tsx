@@ -15,13 +15,12 @@ export function NavBar (): JSX.Element {
   return (
     <AppBar
       sx={{
-        height: '9vh',
+        height: '9%',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        // bottom navbar
         position: 'relative',
         bottom: 0
       }}

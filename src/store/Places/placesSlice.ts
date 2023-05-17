@@ -5,7 +5,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 // initial state type
 interface PlacesState {
   isLoading: boolean
-  userLocation?: [number, number]
+  userLocation?: { lat: number, lng: number }
   errorMessage?: string
 }
 
@@ -22,7 +22,7 @@ export const placesSlice = createSlice({
     startLoading: (state) => {
       state.isLoading = true
     },
-    setPlace: (state, action: PayloadAction<[number, number]>) => {
+    setPlace: (state, action: PayloadAction<{ lat: number, lng: number }>) => {
       state.userLocation = action.payload
       state.isLoading = false
     },

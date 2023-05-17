@@ -8,12 +8,15 @@ export function PageWithNavBar ({ children }: PropsWithChildren): JSX.Element {
         container
         sx={{
           height: '100vh',
-          width: '100vw'
+          width: '100vw',
+          position: 'relative',
+          top: 0,
+          left: 0
         }}
         >
         <Grid
             sx={{
-              height: '91vh',
+              height: '91%',
               width: '100vw',
               position: 'relative',
               top: 0,
