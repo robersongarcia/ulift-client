@@ -1,10 +1,9 @@
 import React from 'react'
-import { GoogleMap } from '@react-google-maps/api'
-
-export const UcabPosition = {
-  lat: 8.297506822303538,
-  lng: -62.711479090059036
-}
+import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import Spinner from './Spinner'
+import { loadOptions, options, UcabPosition } from '../../config/googleMaps'
+import { useAppDispatch } from '../../store/hooks'
+import { setMap } from '../../store/Map/mapSlice'
 
 interface MapProps {
   userLocation?: { lat: number, lng: number } | undefined
@@ -12,31 +11,40 @@ interface MapProps {
 }
 
 function MapGoogle ({ userLocation, children }: MapProps): JSX.Element {
-  return (
-    <GoogleMap
-      mapContainerStyle={
-        {
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          top: 0,
-          left: 0
+  const { isLoaded, loadError } = useLoadScript(loadOptions)
+  const dispatch = useAppDispatch()
+
+  const onLoad = React.useCallback(
+    function onLoad (mapInstance: google.maps.Map) {
+      console.log(mapInstance)
+      dispatch(setMap(mapInstance))
+    }
+    , [])
+
+  const renderMap = (): JSX.Element => {
+    return <GoogleMap
+        mapContainerStyle={
+            {
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0
+            }
         }
-      }
       center={(userLocation != null) ? userLocation : UcabPosition}
-      zoom={16}
-      options={
-        {
-          streetViewControl: false,
-          mapTypeControl: false,
-          keyboardShortcuts: false,
-          fullscreenControl: false
-        }}
+      options={options}
+      onLoad={onLoad}
     >
-      { /* Child components, such as markers, info windows, etc. */ }
-      {children}
+        {children}
     </GoogleMap>
-  )
+  }
+
+  if (loadError != null) {
+    return <div>Map cannot be loaded right now, sorry.</div>
+  }
+
+  return isLoaded ? renderMap() : <Spinner />
 }
 
 export default React.memo(MapGoogle)

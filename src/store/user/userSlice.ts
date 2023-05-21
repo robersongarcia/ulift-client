@@ -16,6 +16,7 @@ interface UserState {
   passengerRating: string | null
   driverRating: string | null
   errorMessage: string | null
+  type: string | null
 }
 
 const initialState: UserState = {
@@ -30,7 +31,8 @@ const initialState: UserState = {
   emergencyContact: null,
   passengerRating: null,
   driverRating: null,
-  errorMessage: null
+  errorMessage: null,
+  type: null
 }
 
 export const userSlice = createSlice({
@@ -39,8 +41,11 @@ export const userSlice = createSlice({
   reducers: {
     test: (state, action: PayloadAction<number>) => {
       console.log('userSlice Test')
+    },
+    setUserType: (state, action: PayloadAction<string>) => {
+      state.type = action.payload
     }
   }
 })
 
-export const { test } = userSlice.actions
+export const { test, setUserType } = userSlice.actions

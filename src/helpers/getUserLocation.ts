@@ -1,4 +1,5 @@
-export const getUserLocation = async (): Promise<[number, number]> => {
+// eslint-disable-next-line max-len
+export const getUserLocation = async (): Promise<{ lat: number, lng: number }> => {
   return await new Promise((resolve, reject) => {
     // ask for permission
     navigator.permissions.query({ name: 'geolocation' }).then((result) => {
@@ -17,7 +18,12 @@ export const getUserLocation = async (): Promise<[number, number]> => {
     // get location
 
     navigator.geolocation.getCurrentPosition(({ coords }) => {
-      resolve([coords.longitude, coords.latitude])
+      resolve(
+        {
+          lat: coords.latitude,
+          lng: coords.longitude
+        }
+      )
     }, (error) => {
       alert(error.message)
       console.log(error)

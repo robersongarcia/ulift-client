@@ -1,9 +1,15 @@
-// import { MapComponent } from '../../ui/components/MapComponent'
-import { Grid, TextField as MuiTextField } from '@mui/material'
-import MapGoogle from '../../ui/components/MapGoogle'
+import { Grid } from '@mui/material'
 import { PageWithNavBar } from '../../ui/layout/PageWithNavBar'
+import { SearchBar } from '../components/SearchBar'
+import ToggleUserType from '../components/ToggleUserType'
+import { useAppSelector } from '../../store/hooks'
+import { PassengerView } from '../views/PassengerView'
+import { DriverView } from '../views/DriverView'
 
 export function LiftPage (): JSX.Element {
+  const { type } = useAppSelector((state) => state.user)
+  const { userLocation } = useAppSelector((state) => state.places)
+
   return (
     <PageWithNavBar>
       {/* <MapComponent /> */}
@@ -13,34 +19,15 @@ export function LiftPage (): JSX.Element {
         alignItems={'center'}
         sx={{ height: '100%', width: '100%' }}
       >
-        <Grid
-          container
-        >
-          <MapGoogle />
-        </Grid>
+        {type === 'passenger' ? <PassengerView userLocation={userLocation}/> : <DriverView />}
         <Grid
           container
           direction='column'
           alignItems={'center'}
           sx={{ height: '100%', width: '100%' }}
         >
-        <Grid
-          item
-          sx={{ zIndex: 2, mt: 3, width: '80%' }}
-
-        >
-          <MuiTextField
-            label='Buscar lugar'
-            variant='outlined'
-            fullWidth
-            sx= {
-              {
-                '& .MuiInputBase-root': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.1)'
-                }
-              }}
-          />
-        </Grid>
+          <SearchBar />
+          <ToggleUserType />
         </ Grid>
       </Grid>
     </PageWithNavBar>
