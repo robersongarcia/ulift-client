@@ -3,8 +3,10 @@ type Libraries = Array<'places' | 'drawing' | 'geometry' | 'localContext' | 'vis
 
 const librariesArray: Libraries = ['places']
 
+const api = import.meta.env.VITE_GOOGLE_API
+
 export const loadOptions = {
-  googleMapsApiKey: '***REMOVED***',
+  googleMapsApiKey: api,
   libraries: librariesArray,
   region: 'VE',
   language: 'es'
@@ -16,7 +18,9 @@ export const options: google.maps.MapOptions = {
   keyboardShortcuts: false,
   fullscreenControl: false,
   zoom: 16,
-  zoomControl: false
+  zoomControl: false,
+  clickableIcons: false,
+  disableDefaultUI: true
 }
 
 export const UcabPosition = {

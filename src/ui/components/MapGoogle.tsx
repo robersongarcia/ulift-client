@@ -7,16 +7,18 @@ import { setMap } from '../../store/Map/mapSlice'
 
 interface MapProps {
   userLocation?: { lat: number, lng: number } | undefined
+  onClickFunction?: (event: google.maps.MapMouseEvent) => void
   children?: React.ReactNode | React.ReactNode[]
 }
 
-function MapGoogle ({ userLocation, children }: MapProps): JSX.Element {
+// eslint-disable-next-line max-len
+function MapGoogle ({ userLocation, onClickFunction, children }: MapProps): JSX.Element {
   const { isLoaded, loadError } = useLoadScript(loadOptions)
   const dispatch = useAppDispatch()
 
   const onLoad = React.useCallback(
     function onLoad (mapInstance: google.maps.Map) {
-      console.log(mapInstance)
+      // console.log(mapInstance)
       dispatch(setMap(mapInstance))
     }
     , [])
@@ -35,6 +37,7 @@ function MapGoogle ({ userLocation, children }: MapProps): JSX.Element {
       center={(userLocation != null) ? userLocation : UcabPosition}
       options={options}
       onLoad={onLoad}
+      onClick={onClickFunction}
     >
         {children}
     </GoogleMap>

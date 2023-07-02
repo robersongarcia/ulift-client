@@ -19,7 +19,7 @@ export function LiftPage (): JSX.Element {
         alignItems={'center'}
         sx={{ height: '100%', width: '100%' }}
       >
-        {type === 'passenger' ? <PassengerView userLocation={userLocation}/> : <DriverView />}
+        {type === 'passenger' ? <PassengerView userLocation={userLocation}/> : <DriverView userLocation={userLocation}/>}
         <Grid
           container
           direction='column'
