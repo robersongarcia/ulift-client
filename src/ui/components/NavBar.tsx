@@ -1,5 +1,5 @@
 import { DirectionsCar, Person, Star, ReceiptLong } from '@mui/icons-material'
-import { AppBar, Grid, IconButton } from '@mui/material'
+import { Grid, IconButton } from '@mui/material'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -22,7 +22,8 @@ export function NavBar (): JSX.Element {
         width: '100%',
         backgroundColor: 'primary.main',
         alignSelf: 'flex-end',
-        height: '7%'
+        height: '7%',
+        zIndex: 100
       }}
     >
       <IconButton
@@ -33,7 +34,7 @@ export function NavBar (): JSX.Element {
               fontSize: '2.5rem',
               borderRadius: '50%',
               padding: '0.5rem',
-              color: 'white',
+              color: `${path !== '/perfil' ? '#bfbfbf' : 'white'}`,
               height: '100%'
             }}
           />
@@ -48,7 +49,7 @@ export function NavBar (): JSX.Element {
               fontSize: '2.5rem',
               borderRadius: '50%',
               padding: '0.5rem',
-              color: 'white',
+              color: `${path !== '/' ? '#bfbfbf' : 'white'}`,
               height: '100%'
             }}
           />
@@ -62,20 +63,21 @@ export function NavBar (): JSX.Element {
               fontSize: '2.5rem',
               borderRadius: '50%',
               padding: '0.5rem',
-              color: 'white',
+              color: `${path !== '/historial' ? '#bfbfbf' : 'white'}`,
               height: '100%'
             }}
           />
         </NavLink>
       </IconButton>
-      <IconButton>
+      <IconButton
+      >
         <NavLink to='/favoritos'>
           <Star
             sx={{
               fontSize: '2.5rem',
               borderRadius: '50%',
               padding: '0.5rem',
-              color: 'white',
+              color: `${path !== '/favoritos' ? '#bfbfbf' : 'white'}`,
               height: '100%'
             }}
           />

@@ -31,11 +31,9 @@ export default function ToggleUserType (): JSX.Element {
       onChange={handleAlignment}
       aria-label='text alignment'
       sx={{
-        // position at bottom left
-        position: 'absolute',
-        bottom: '20px',
-        right: '10px',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        ml: 2,
+        zIndex: 100
       }}
 
     >

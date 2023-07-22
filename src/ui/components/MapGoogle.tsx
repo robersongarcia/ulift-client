@@ -28,10 +28,11 @@ function MapGoogle ({ userLocation, onClickFunction, children }: MapProps): JSX.
         mapContainerStyle={
             {
               width: '100%',
-              height: '100%',
+              height: '93vh',
               position: 'absolute',
               top: 0,
-              left: 0
+              left: 0,
+              zIndex: 1
             }
         }
       center={(userLocation != null) ? userLocation : UcabPosition}
