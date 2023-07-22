@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { useAppSelector } from '../../store/hooks'
 import MapGoogle from '../../ui/components/MapGoogle'
+import * as React from 'react'
 
 interface PassengerViewProps {
   userLocation: { lat: number, lng: number } | undefined
 }
 
 // eslint-disable-next-line max-len
-export function PassengerView ({ userLocation }: PassengerViewProps): JSX.Element {
+function PassengerViewComp ({ userLocation }: PassengerViewProps): JSX.Element {
   const [markers, setMarkers] = useState<google.maps.Marker[]>([])
 
   const { map, isMapReady } = useAppSelector((state) => state.map)
@@ -42,3 +43,5 @@ export function PassengerView ({ userLocation }: PassengerViewProps): JSX.Elemen
     <MapGoogle userLocation={userLocation} onClickFunction={onClickFunction}/>
   )
 }
+
+export const PassengerView = React.memo(PassengerViewComp)
