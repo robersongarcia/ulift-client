@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { LiftPage } from '../lift/pages/LiftPage'
+import LiftPage from '../lift/pages/LiftPage'
 import { ProfilePage } from '../profile/pages/ProfilePage'
 import { FavoritesPage } from '../favorites/pages/FavoritesPage'
 import { useEffect } from 'react'

@@ -15,7 +15,7 @@ interface MapProps {
 function MapGoogle ({ userLocation, onClickFunction, children }: MapProps): JSX.Element {
   const { isLoaded, loadError } = useLoadScript(loadOptions)
   const dispatch = useAppDispatch()
-
+  console.log('Render')
   const onLoad = React.useCallback(
     function onLoad (mapInstance: google.maps.Map) {
       // console.log(mapInstance)

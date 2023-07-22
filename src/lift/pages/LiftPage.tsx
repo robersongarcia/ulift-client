@@ -10,8 +10,9 @@ import { SearchBar } from '../components/SearchBar'
 import ToggleUserType from '../components/ToggleUserType'
 import { FabButton } from '../components/FabButton'
 import MapGoogle from '../../ui/components/MapGoogle'
+import React from 'react'
 
-export function LiftPage (): JSX.Element {
+function LiftPage (): JSX.Element {
   return (
     <PageWithNavBar>
       <Grid container
@@ -41,3 +42,5 @@ export function LiftPage (): JSX.Element {
     </PageWithNavBar>
   )
 }
+
+export default React.memo(LiftPage)
