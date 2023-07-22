@@ -1,5 +1,5 @@
-import { DirectionsCar, Person, Star } from '@mui/icons-material'
-import { AppBar, IconButton } from '@mui/material'
+import { DirectionsCar, Person, Star, ReceiptLong } from '@mui/icons-material'
+import { AppBar, Grid, IconButton } from '@mui/material'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -13,29 +13,28 @@ export function NavBar (): JSX.Element {
   }, [pathname])
 
   return (
-    <AppBar
+    <Grid item
       sx={{
-        height: '9%',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        position: 'relative',
-        bottom: 0
+        backgroundColor: 'primary.main',
+        alignSelf: 'flex-end',
+        height: '7%'
       }}
     >
-
       <IconButton
       >
         <NavLink to='/perfil'>
           <Person
             sx={{
-              fontSize: '3rem',
+              fontSize: '2.5rem',
               borderRadius: '50%',
               padding: '0.5rem',
               color: 'white',
-              backgroundColor: path === '/perfil' ? 'primary.dark' : 'inherit'
+              height: '100%'
             }}
           />
         </NavLink>
@@ -46,29 +45,42 @@ export function NavBar (): JSX.Element {
           <NavLink to='/'>
           <DirectionsCar
             sx={{
-              fontSize: '3rem',
+              fontSize: '2.5rem',
               borderRadius: '50%',
               padding: '0.5rem',
               color: 'white',
-              backgroundColor: path === '/' ? 'primary.dark' : 'inherit'
+              height: '100%'
             }}
           />
-          </NavLink>
+        </NavLink>
+      </IconButton>
+      <IconButton
+        >
+          <NavLink to='/historial'>
+          <ReceiptLong
+            sx={{
+              fontSize: '2.5rem',
+              borderRadius: '50%',
+              padding: '0.5rem',
+              color: 'white',
+              height: '100%'
+            }}
+          />
+        </NavLink>
       </IconButton>
       <IconButton>
         <NavLink to='/favoritos'>
           <Star
             sx={{
-              fontSize: '3rem',
+              fontSize: '2.5rem',
               borderRadius: '50%',
               padding: '0.5rem',
               color: 'white',
-              // eslint-disable-next-line max-len
-              backgroundColor: path === '/favoritos' ? 'primary.dark' : 'inherit'
+              height: '100%'
             }}
           />
           </NavLink>
       </IconButton>
-    </AppBar>
+    </Grid>
   )
 }

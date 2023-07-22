@@ -5,6 +5,7 @@ import { FavoritesPage } from '../favorites/pages/FavoritesPage'
 import { useEffect } from 'react'
 import { useAppDispatch } from '../store/hooks'
 import { getLocation } from '../store/Places/thunks'
+import { HistoryPage } from '../history/pages/HistoryPage'
 
 export function PrivateRoutes (): JSX.Element {
   const dispatch = useAppDispatch()
@@ -19,6 +20,7 @@ export function PrivateRoutes (): JSX.Element {
       <Route path='/*' element={<Navigate to='/' />} />
       <Route path='/perfil' element={<ProfilePage/>} />
       <Route path='/favoritos' element={<FavoritesPage/>} />
+      <Route path='/historial' element={<HistoryPage/>} />
     </Routes>
   )
 }

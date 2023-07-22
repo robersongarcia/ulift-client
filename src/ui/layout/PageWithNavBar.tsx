@@ -9,21 +9,16 @@ export function PageWithNavBar ({ children }: PropsWithChildren): JSX.Element {
         sx={{
           height: '100vh',
           width: '100vw',
-          position: 'relative',
-          top: 0,
-          left: 0
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden'
         }}
         >
         <Grid
             sx={{
-              height: '91%',
-              width: '100vw',
-              position: 'relative',
-              top: 0,
-              left: 0,
-              overflow: 'auto'
-            }}
-            container>
+              width: '100%',
+              height: '93%'
+            }} >
             {children ?? <></>}
         </Grid>
         <NavBar/>
