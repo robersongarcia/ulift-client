@@ -6,6 +6,7 @@ import
   CardHeader,
   Divider,
   Grid,
+  IconButton,
   Paper,
   Typography
 } from '@mui/material'
@@ -13,11 +14,25 @@ import { PageWithNavBar } from '../../ui/layout/PageWithNavBar'
 import {
   DirectionsCar,
   LocationCity,
+  Logout,
   RampLeftRounded,
   Star
 } from '@mui/icons-material'
 
 import '../../ui/utils.css'
+import InfoCard from '../components/InfoCard'
+
+const destinations = [{
+  name: 'Manoa',
+  address: 'Av. Principal de Manoa, Caracas, Venezuela'
+},
+{
+  name: 'Olivos',
+  address: 'Av. Leopoldo Sucre Figuerela'
+}
+]
+// const vehicles = []
+// const routes = []
 
 export function ProfilePage (): JSX.Element {
   return (
@@ -247,6 +262,105 @@ export function ProfilePage (): JSX.Element {
             </CardContent>
           </Card>
         </Grid>
+
+        <Grid container
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            mt: 2
+          }}
+        >
+          <Typography variant='h6'>Destinos</Typography>
+          <Grid container
+            spacing={1}
+            sx={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              mt: 1
+            }}
+          >
+            {destinations.length === 0 &&
+            // eslint-disable-next-line max-len
+            <Typography variant='body1'>No hay destinos registrados.</Typography>}
+            {destinations.map((destination, index) => (
+              <InfoCard
+                key={index}
+                title={destination.name}
+                subtitile={destination.address}
+              />))}
+          </Grid>
+        </Grid>
+        <Grid container
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            mt: 2
+          }}
+        >
+          <Typography variant='h6'>Rutas</Typography>
+          <Grid container
+            spacing={1}
+            sx={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              mt: 1
+            }}
+          >
+            {destinations.length === 0 &&
+            <Typography variant='body1'>No hay rutas registradas.</Typography>}
+            {destinations.map((destination, index) => (
+              <InfoCard
+                key={index}
+                title={destination.name}
+                subtitile={destination.address}
+              />))}
+          </Grid>
+        </Grid>
+        <Grid container
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            mt: 2
+          }}
+        >
+          <Typography variant='h6'>Vehículos</Typography>
+          <Grid container
+            spacing={1}
+            sx={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              mt: 1
+            }}
+          >
+            {destinations.length === 0 &&
+            // eslint-disable-next-line max-len
+            <Typography variant='body1'>No hay vehículos registrados.</Typography>}
+            {destinations.map((destination, index) => (
+              <InfoCard
+                key={index}
+                title={destination.name}
+                subtitile={destination.address}
+              />))}
+          </Grid>
+        </Grid>
         <Grid container
           sx={{
             width: '100%'
@@ -256,23 +370,31 @@ export function ProfilePage (): JSX.Element {
               sx={{
                 display: 'flex',
                 width: '100%',
-                height: '80px',
-                p: 0
+                height: '70px',
+                p: 0,
+                mt: 2
               }}
               onClick={() => {
                 console.log('si')
               }}
             >
+              <IconButton
+                 sx={{
+                   display: 'flex',
+                   flexDirection: 'row',
+                   alignItems: 'center',
+                   width: '100%',
+                   height: '70px',
+                   color: 'primary.main'
+                 }}
+              >
               <Paper
                 sx={{
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-
                   width: '100%',
-                  height: '80px',
-                  textOverflow: 'ellipsis',
-                  overflow: 'hidden',
+                  height: '70px',
                   backgroundColor: 'background.default'
                 }}
                 variant='outlined'
@@ -282,10 +404,8 @@ export function ProfilePage (): JSX.Element {
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-
                   width: '100%',
-                  height: '80px',
-                  textOverflow: 'ellipsis',
+                  height: '70px',
                   overflow: 'hidden'
                 }}
               >
@@ -296,8 +416,8 @@ export function ProfilePage (): JSX.Element {
                 </Typography>
               </CardContent>
               </Paper>
+              </IconButton>
             </Card>
-            <Divider />
             <Card
               sx={{
                 width: '100%',
@@ -308,16 +428,23 @@ export function ProfilePage (): JSX.Element {
                 console.log('si')
               }}
             >
+              <IconButton
+                 sx={{
+                   display: 'flex',
+                   flexDirection: 'row',
+                   alignItems: 'center',
+                   width: '100%',
+                   height: '70px',
+                   color: 'primary.main'
+                 }}
+              >
               <Paper
                 sx={{
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-
                   width: '100%',
-                  height: '80px',
-                  textOverflow: 'ellipsis',
-                  overflow: 'hidden',
+                  height: '70px',
                   backgroundColor: 'background.default'
                 }}
                 variant='outlined'
@@ -327,19 +454,18 @@ export function ProfilePage (): JSX.Element {
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-
                   width: '100%',
                   height: '70px',
-                  textOverflow: 'ellipsis',
                   overflow: 'hidden'
                 }}
-              >
+                >
                 <DirectionsCar />
                 <Typography sx={{ fontWeight: 600, fontSize: 16, ml: 2 }}>
                   Agregar Vehículo{' '}
                 </Typography>
               </CardContent>
               </Paper>
+              </IconButton>
             </Card>
             <Divider />
             <Card
@@ -352,16 +478,23 @@ export function ProfilePage (): JSX.Element {
                 console.log('si')
               }}
             >
+              <IconButton
+                 sx={{
+                   display: 'flex',
+                   flexDirection: 'row',
+                   alignItems: 'center',
+                   width: '100%',
+                   height: '70px',
+                   color: 'primary.main'
+                 }}
+              >
               <Paper
                 sx={{
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-
                   width: '100%',
-                  height: '80px',
-                  textOverflow: 'ellipsis',
-                  overflow: 'hidden',
+                  height: '70px',
                   backgroundColor: 'background.default'
                 }}
                 variant='outlined'
@@ -371,10 +504,8 @@ export function ProfilePage (): JSX.Element {
                   display: 'flex',
                   flexDirection: 'row',
                   alignItems: 'center',
-
                   width: '100%',
                   height: '70px',
-                  textOverflow: 'ellipsis',
                   overflow: 'hidden'
                 }}
               >
@@ -384,10 +515,29 @@ export function ProfilePage (): JSX.Element {
                 </Typography>
               </CardContent>
               </Paper>
+              </IconButton>
             </Card>
-            <Divider />
         </Grid>
+        <Grid item
+          sx={{
+            width: '100%',
+            mt: 4,
+            mb: 4
+          }}
+        >
+          <IconButton
+            sx={{
+              ml: 2
+            }}
+            color='primary'
 
+          >
+              <Logout />
+              <Typography sx={{
+                fontWeight: 'bold'
+              }}>Cerrar Sesión</Typography>
+          </IconButton>
+        </Grid>
       </Grid>
     </PageWithNavBar>
   )
