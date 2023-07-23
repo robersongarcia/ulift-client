@@ -21,7 +21,8 @@ export function NavBar (): JSX.Element {
         alignItems: 'center',
         width: '100%',
         backgroundColor: 'primary.main',
-        alignSelf: 'flex-end',
+        position: 'fixed',
+        bottom: 0,
         height: '7%',
         zIndex: 100
       }}

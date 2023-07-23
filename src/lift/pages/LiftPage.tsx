@@ -29,11 +29,12 @@ function LiftPage (): JSX.Element {
         <Grid sx={{
           width: '100%',
           display: 'flex',
-          mb: 4,
           direction: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
-          alignSelf: 'flex-end'
+          position: 'fixed',
+          bottom: '10%',
+          zIndex: 100
         }}>
           <ToggleUserType />
           <FabButton/>

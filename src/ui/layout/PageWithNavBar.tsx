@@ -7,11 +7,11 @@ export function PageWithNavBar ({ children }: PropsWithChildren): JSX.Element {
     <Grid
         container
         sx={{
-          height: '100vh',
+          height: '100%',
           width: '100vw',
           display: 'flex',
           flexDirection: 'column',
-          overflow: 'hidden'
+          overflow: 'hidden scroll'
         }}
         >
         <Grid
