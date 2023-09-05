@@ -21,6 +21,7 @@ import {
 
 import '../../ui/utils.css'
 import InfoCard from '../components/InfoCard'
+import { ProfileInfoFields } from '../components/ProfileInfoFields'
 
 const destinations = [{
   name: 'Manoa',
@@ -209,15 +210,20 @@ export function ProfilePage (): JSX.Element {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     mb: 3,
-                    mt: -1
+                    mt: -1,
+                    gap: 1
                   }}
                   >
-                  <Typography><span style={{
-                    fontWeight: 'bold'
-                  }}>Nombre: </span>Roberson</Typography>
-                  <Typography><span style={{
-                    fontWeight: 'bold'
-                  }}>Apellido: </span>Garcia</Typography>
+                    <ProfileInfoFields
+                      label='Nombre'
+                      name='name'
+                      value='John'
+                    />
+                    <ProfileInfoFields
+                      label='Apellido'
+                      name='lastname'
+                      value='Doe'
+                    />
                 </Grid>
                 <Grid item
                   sx={{
@@ -228,9 +234,11 @@ export function ProfilePage (): JSX.Element {
                     mb: 3
                   }}
                   >
-                  <Typography><span style={{
-                    fontWeight: 'bold'
-                  }}>Correo: </span>ragarcia.19@est.ucab.edu.ve</Typography>
+                    <ProfileInfoFields
+                      label='Correo'
+                      name='email'
+                      value='johndoe@gmail.com'
+                    />
                 </Grid>
                 <Grid item
                   sx={{
@@ -241,9 +249,11 @@ export function ProfilePage (): JSX.Element {
                     mb: 3
                   }}
                   >
-                  <Typography><span style={{
-                    fontWeight: 'bold'
-                  }}>Número: </span>(424)9144388</Typography>
+                    <ProfileInfoFields
+                      label='Número de Teléfono'
+                      name='phone'
+                      value='(424) 9144388'
+                    />
                 </Grid>
                 <Grid item
                   sx={{
@@ -254,9 +264,11 @@ export function ProfilePage (): JSX.Element {
                     mb: 3
                   }}
                   >
-                  <Typography><span style={{
-                    fontWeight: 'bold'
-                  }}>Nro de Emergencia: </span>(424)9144388</Typography>
+                    <ProfileInfoFields
+                      label='Número de Emergencia'
+                      name='phoneEmergency'
+                      value='(424) 9144388'
+                    />
                 </Grid>
               </Grid>
             </CardContent>
