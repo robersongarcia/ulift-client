@@ -97,7 +97,7 @@ export function FavoritesPage (): JSX.Element {
             width: '100%',
             height: '100%',
             paddingX: '32px',
-            scrollBehavior: 'smooth',
+            scrollBehavior: 'smooth'
           }}
         >
           {
